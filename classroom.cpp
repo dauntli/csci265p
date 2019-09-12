@@ -21,8 +21,9 @@ Student* classroom::resize(Student* currentClass)
     Student* output = new Student[numberofstudents];
     for(int i = 0; i < numberofstudents; i++)
     {
-        //output[i] = currentClass[i];
+        output[i] = currentClass[i];
     }
+    delete []studentclass;
     return output;
 }
 void classroom::attendance()

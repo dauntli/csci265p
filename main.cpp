@@ -53,8 +53,6 @@ int main(int argv, char *argc[])
      std::string c;//c for checker, will act as the probe to check everything 
        while (std::getline(inputFile, c))
        {
-         //std::string copy = c;
-         //std::string firstword = copy.substr(0, copy.find(' '));
          std::string firstword = c.substr(0, c.find(' '));
 	 if (firstword == title_const)
          {
@@ -77,10 +75,10 @@ int main(int argv, char *argc[])
          {
              int studentsize;
              myclassroom.addStudent(Student(firstword, trimmer(c, studentsize), studentsize));
+             
          }
         } 
        inputFile.close();
-
        myclassroom.attendance();
 
        int maxmark_size, weight_size, title_size, cat_size;
