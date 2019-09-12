@@ -35,7 +35,6 @@ void classroom::attendance()
     std::cout << std::endl;
 }
 void classroom::reportCardAll()
-<<<<<<< HEAD
 {
    // std::cout << studentclass[1].gradeGet(2);
     Student fre(studentclass[1]);
@@ -63,11 +62,6 @@ float classroom::gpa(Student current)
     }
     return grade; 
 }
-=======
-{}
-float* classroom::gpa()
-{}
->>>>>>> parent of a76b9df... problem with the math of the grades, cannot access each students grade in classroom::gpa
 std::string classroom::letterGrade()
 {
 }
