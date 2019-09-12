@@ -8,7 +8,7 @@ Student::Student()
 Student::Student(std::string name, std::string* stringgrade, int size)
 {
      this -> name = name;
-//     this -> size = size;
+     this -> size = size;
      float* grades = new float[size];
      std::cout << "Instantiating new student with name of " << name << " and data of: ";
      for (int i = 0; i < size-1; i ++)

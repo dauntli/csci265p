@@ -21,7 +21,7 @@ Student* classroom::resize(Student* currentClass)
     Student* output = new Student[numberofstudents];
     for(int i = 0; i < numberofstudents; i++)
     {
-        output[i] = currentClass[i];
+        //output[i] = currentClass[i];
     }
     return output;
 }
@@ -36,18 +36,10 @@ void classroom::attendance()
 }
 void classroom::reportCardAll()
 {
-   // std::cout << studentclass[1].gradeGet(2);
-    Student fre(studentclass[1]);
-    std::cout << fre.nameGet();
-    for(int i = 0; i < 8; i++)
+    for(int i = 0; i < numberofstudents-1; i++)
     {
-       std::cout << fre[i] << " ";
+       std::cout << studentclass[i].nameGet() << " ";
     }
-    /*
-    for(int i = 0; i < numberofstudents; i ++)
-    {
-        std::cout << studentclass[i].nameGet() << " : " << studentclass[i] -> gradeGet(i) << std::endl;
-    }*/
     std::cout << std::endl;
 }
 float classroom::gpa(Student current)
@@ -56,14 +48,13 @@ float classroom::gpa(Student current)
     float grade = 0;
     for(int i = 0; i < maxmarksize-1; i++)
     {
-        //grade += ( current.gradeGet(i) * weight[i] ) / maxmark[i]; 
-        //grade = current[i];
-        //std::cout << current.nameGet() << std::endl;   
+        grade ++;
     }
     return grade; 
 }
 std::string classroom::letterGrade()
 {
+   return "A or F";
 }
 void classroom::setMaxmark(float* input, int maxmarksize)
 {
@@ -86,4 +77,4 @@ void classroom::setWeight(float* input, int weightsize)
         std::cout << this -> weight[i] << " ";
     }
     std::cout << std::endl;
-
+}

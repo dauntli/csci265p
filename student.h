@@ -16,5 +16,5 @@ class Student
      std::string nameGet();
      float gradeGet(int index);
      float operator[] (int i);
-}
+};
 #endif

@@ -3,7 +3,7 @@ TITLE  Lab1 Lab2 Assign1 Midterm Lab3 Lab4 Assign2 FinalExam
 CATEGORY Lab Lab Assignment Midterm Lab Lab Assignment Final
 MAXMARK 10 10 15 40 10 10 20 90
 WEIGHT 5 5 10 20 5 5 10 40
-
+Rule hello
 
 
 tink     9  9.5 13 34 10 8.5 17 80
