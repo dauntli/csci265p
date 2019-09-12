@@ -20,7 +20,7 @@ class classroom
   void addStudent(Student newstudent);
   void attendance();
   void reportCardAll();
-  float gpa(Student curr);
+  float* gpa();
   std::string letterGrade();
   void setMaxmark(float* input, int maxmarksize);
   void setWeight(float* input, int weightsize);

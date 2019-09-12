@@ -31,6 +31,7 @@ Student::~Student()
 {
    delete [] grades;   
 }
+<<<<<<< HEAD
 float Student::gradeGet(int index)
 { 
     return grades[index];
@@ -40,3 +41,5 @@ float Student::operator[] (int i)
    return grades[i];
 }
 
+=======
+>>>>>>> parent of a76b9df... problem with the math of the grades, cannot access each students grade in classroom::gpa

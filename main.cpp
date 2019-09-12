@@ -108,7 +108,10 @@ int main(int argv, char *argc[])
        myclassroom.setWeight(weight, weight_size); 
        float* maxmark = stringtofloat(trimmer(maxmark_input, maxmark_size), maxmark_size);
        myclassroom.setMaxmark(maxmark, maxmark_size);
+<<<<<<< HEAD
        myclassroom.reportCardAll();
+=======
+>>>>>>> parent of a76b9df... problem with the math of the grades, cannot access each students grade in classroom::gpa
 }
 std::string* trimmer(std::string untrimmed, int &size)
 {
