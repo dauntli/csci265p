@@ -12,6 +12,7 @@ class Student
      ~Student();
      Student(std::string name);
      std::string nameGet();
+     float gradeGet(int index);
  
 };
 

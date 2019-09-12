@@ -30,3 +30,8 @@ Student::~Student()
 {
    delete [] grades;
 }
+float Student::gradeGet(int index)
+{ 
+    std::cout << "gradegetter on " << grades[index];
+    return grades[index];
+}
