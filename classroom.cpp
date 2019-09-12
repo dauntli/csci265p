@@ -36,26 +36,34 @@ void classroom::attendance()
 }
 void classroom::reportCardAll()
 {
+   // std::cout << studentclass[1].gradeGet(2);
+    Student fre(studentclass[1]);
+    std::cout << fre.nameGet();
+    for(int i = 0; i < 8; i++)
+    {
+       std::cout << fre[i] << " ";
+    }
+    /*
     for(int i = 0; i < numberofstudents; i ++)
     {
-        std::cout << studentclass[i].nameGet() << " : " << gpa(studentclass[i]) << std::endl;
-    }
+        std::cout << studentclass[i].nameGet() << " : " << studentclass[i] -> gradeGet(i) << std::endl;
+    }*/
     std::cout << std::endl;
 }
 float classroom::gpa(Student current)
 {
     //mark * weight / maxmark
     float grade = 0;
-    for(int i = 0; i < maxmarksize-1 ; i++)
+    for(int i = 0; i < maxmarksize-1; i++)
     {
         //grade += ( current.gradeGet(i) * weight[i] ) / maxmark[i]; 
-        grade += current.gradeGet(i);
+        //grade = current[i];
+        //std::cout << current.nameGet() << std::endl;   
     }
     return grade; 
 }
 std::string classroom::letterGrade()
 {
-    return "A-F";
 }
 void classroom::setMaxmark(float* input, int maxmarksize)
 {

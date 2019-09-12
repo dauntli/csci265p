@@ -108,9 +108,6 @@ int main(int argv, char *argc[])
        myclassroom.setWeight(weight, weight_size); 
        float* maxmark = stringtofloat(trimmer(maxmark_input, maxmark_size), maxmark_size);
        myclassroom.setMaxmark(maxmark, maxmark_size);
-       
-       myclassroom.reportCardAll();
-}
 std::string* trimmer(std::string untrimmed, int &size)
 {
      std::istringstream mystream;
