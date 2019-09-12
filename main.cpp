@@ -93,19 +93,21 @@ int main(int argv, char *argc[])
        inputFile.close();
 
        int maxmark_size, weight_size, title_size, cat_size;
-       std::string* maxmark = trimmer(maxmark_input, maxmark_size);
+       //std::string* maxmark = trimmer(maxmark_input, maxmark_size);
        //std::string* weight = trimmer(weight_input, weight_size);
        std::string* title = trimmer(title_input, title_size);
        std::string* cat = trimmer(cat_input, cat_size);
 
-       printStringArray(maxmark, maxmark_size);
+       //printStringArray(maxmark, maxmark_size);
        printStringArray(title, title_size);
        //printStringArray(weight, weight_size);
        std::string* validcategories = categorySetter(cat, cat_size, numberofcategories);
        printStringArray(validcategories, numberofcategories); 
 
        float* weight = stringtofloat(trimmer(weight_input, weight_size), weight_size);
-       //myclassroom.setWeight(weight, weight_size); 
+       myclassroom.setWeight(weight, weight_size); 
+       float* maxmark = stringtofloat(trimmer(maxmark_input, maxmark_size), maxmark_size);
+       myclassroom.setMaxmark(maxmark, maxmark_size);
 }
 std::string* trimmer(std::string untrimmed, int &size)
 {
@@ -178,7 +180,9 @@ float* stringtofloat(std::string* input, int size)
    float* output = new float[size];
    for(int i = 0; i < size; i++)
    {
-      output[i] = std::stof(input[i]);
+      //output[i] = std::stof(input[i]);
+      output[i] = ::atof(input[i].c_str());
    }
+   
    return output;
 }

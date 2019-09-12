@@ -9,6 +9,7 @@ class classroom
   int numberofstudents;
   Student* studentclass;
   float* maxmark;
+  int maxmarksize;
   float* weight;
   int weightsize;
 
@@ -20,7 +21,7 @@ class classroom
   void reportCardAll();
   float* gpa();
   std::string letterGrade();
-  void setMaxmark(float* input);
+  void setMaxmark(float* input, int maxmarksize);
   void setWeight(float* input, int weightsize);
 
   protected:

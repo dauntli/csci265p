@@ -41,12 +41,25 @@ float* classroom::gpa()
 std::string classroom::letterGrade()
 {
 }
-void classroom::setMaxmark(float* input)
+void classroom::setMaxmark(float* input, int maxmarksize)
 {
-    this -> maxmark = input;
+    this -> maxmark = input; 
+    this -> maxmarksize = maxmarksize;
+    std::cout << "Maxmark is: ";
+    for(int i = 0; i < maxmarksize-1; i++)
+    {
+        std::cout << this -> maxmark[i] << " ";
+    }
+    std::cout << std::endl;
 }
 void classroom::setWeight(float* input, int weightsize)
 {
     this -> weight = input;
     this -> weightsize = weightsize;
+    std::cout << "Weight is: ";
+    for(int i = 0; i < weightsize-1; i++)
+    {
+        std::cout << this -> weight[i] << " ";
+    }
+    std::cout << std::endl;
 }
