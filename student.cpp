@@ -8,6 +8,7 @@ Student::Student()
 Student::Student(std::string name, std::string* stringgrade, int size)
 {
      this -> name = name;
+//     this -> size = size;
      float* grades = new float[size];
      std::cout << "Instantiating new student with name of " << name << " and data of: ";
      for (int i = 0; i < size-1; i ++)
@@ -28,10 +29,14 @@ std::string Student::nameGet()
 }
 Student::~Student()
 {
-   delete [] grades;
+   delete [] grades;   
 }
 float Student::gradeGet(int index)
 { 
-    std::cout << "gradegetter on " << grades[index];
     return grades[index];
 }
+float Student::operator[] (int i)
+{
+   return grades[i];
+}
+

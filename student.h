@@ -6,6 +6,8 @@ class Student
      private:
      std::string name;
      float* grades;
+     int size;
+
      public:
      Student(std::string name, std::string* stringgrade, int size);
      Student();
@@ -13,7 +15,8 @@ class Student
      Student(std::string name);
      std::string nameGet();
      float gradeGet(int index);
- 
+     float operator[] (int i);
+
 };
 
 #endif

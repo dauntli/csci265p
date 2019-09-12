@@ -14,6 +14,7 @@ class classroom
   int weightsize;
 
   public:
+  
   classroom();
   ~classroom();
   void addStudent(Student newstudent);
