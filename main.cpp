@@ -9,7 +9,7 @@ const std::string title_const = "TITLE";
 const std::string maxmark_const = "MAXMARK";
 const std::string cat_const = "CATEGORY";
 const std::string weight_const = "WEIGHT";
-const std::string rule_const = "RULE";
+const std::string rule_const = "Rule";
 const std::string comment_const = "#";
 
 
@@ -30,12 +30,8 @@ int main(int argv, char *argc[])
      std::string maxmark_input;
      std::string weight_input; 
      std::string path = "";
-     int numberofstudents = 0;
      int numberofcategories = 0;
      classroom myclassroom;
-
-     //Student* classroom = new Student[numberofstudents];
-    
 
      //if they gave an argument for the path, it will be stored in the path variable
      if(argc[1] != NULL)
@@ -54,11 +50,12 @@ int main(int argv, char *argc[])
      //is one of the constants, it will save the data in the respective string. checks
      //for whitespace and blank lines and the default case is to make a new student. 
      std::ifstream inputFile(path);
-     std::string c;
+     std::string c;//c for checker, will act as the probe to check everything 
        while (std::getline(inputFile, c))
        {
-         std::string copy = c;
-         std::string firstword = copy.substr(0, copy.find(' '));
+         //std::string copy = c;
+         //std::string firstword = copy.substr(0, copy.find(' '));
+         std::string firstword = c.substr(0, c.find(' '));
 	 if (firstword == title_const)
          {
              title_input = c;
@@ -79,35 +76,29 @@ int main(int argv, char *argc[])
          } else 
          {
              int studentsize;
-             //std::cout << "Make a new student called " << firstword << " with data of \n";
-             std::string* studentdata =  trimmer(c, studentsize);
-             //printStringArray(studentdata, studentsize);
-             //classroom[numberofstudents] = Student(firstword, studentdata, studentsize);
-             numberofstudents ++;
-             myclassroom.addStudent(Student(firstword, studentdata, studentsize));
+             myclassroom.addStudent(Student(firstword, trimmer(c, studentsize), studentsize));
          }
-        }
- 
-       myclassroom.attendance();
-       
+        } 
        inputFile.close();
 
-       int maxmark_size, weight_size, title_size, cat_size;
-       //std::string* maxmark = trimmer(maxmark_input, maxmark_size);
-       //std::string* weight = trimmer(weight_input, weight_size);
-       std::string* title = trimmer(title_input, title_size);
-       std::string* cat = trimmer(cat_input, cat_size);
+       myclassroom.attendance();
 
-       //printStringArray(maxmark, maxmark_size);
+       int maxmark_size, weight_size, title_size, cat_size;
+
+       std::string* title = trimmer(title_input, title_size);
+
+       std::string* cat = trimmer(cat_input, cat_size);
        printStringArray(title, title_size);
-       //printStringArray(weight, weight_size);
+
        std::string* validcategories = categorySetter(cat, cat_size, numberofcategories);
        printStringArray(validcategories, numberofcategories); 
 
        float* weight = stringtofloat(trimmer(weight_input, weight_size), weight_size);
-       myclassroom.setWeight(weight, weight_size); 
+       myclassroom.setWeight(weight, weight_size);
+ 
        float* maxmark = stringtofloat(trimmer(maxmark_input, maxmark_size), maxmark_size);
        myclassroom.setMaxmark(maxmark, maxmark_size);
+}
 std::string* trimmer(std::string untrimmed, int &size)
 {
      std::istringstream mystream;
