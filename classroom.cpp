@@ -78,4 +78,4 @@ void classroom::setWeight(float* input, int weightsize)
         std::cout << this -> weight[i] << " ";
     }
     std::cout << std::endl;
-}
+
