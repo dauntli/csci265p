@@ -26,7 +26,7 @@ class classroom
   void setWeight(float* input, int weightsize);
 
   protected:
-  Student* resize(Student* currentClass);
+  void resize();
   
 
 
