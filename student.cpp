@@ -29,7 +29,8 @@ std::string Student::nameGet()
 }
 Student::~Student()
 {
-   delete [] grades;   
+   delete [] grades;  
+   grades = 0; 
 }
 float Student::gradeGet(int index)
 { 

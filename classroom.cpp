@@ -10,6 +10,7 @@ classroom::classroom()
 classroom::~classroom()
 {
    delete[] studentclass;
+   studentclass = 0;
 }
 void classroom::addStudent(Student newstudent)
 {
@@ -28,22 +29,14 @@ void classroom::resize()
          output[i] = studentclass[i];
     }
     delete [] studentclass;
+    studentclass = 0;
     studentclass = new Student[numberofstudents];
     for (int i = 0; i < numberofstudents; i++)
     {
          studentclass[i] = output[i];
     }
     delete [] output;
-
-    /*
-    Student* output = new Student[numberofstudents++];
-    for(int i = 0; i < 7; i++)
-    {
-        output[i] = currentClass[i];
-    }
-    delete [] studentclass;
-    return output;
-    */
+    output = 0;
 }
 void classroom::attendance()
 {
